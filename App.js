@@ -5,7 +5,7 @@
  * @format
  * @flow strict-local
  */
-import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import ImagePicker, { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 
 import React from 'react';
@@ -33,7 +33,7 @@ const App: () => React$Node = () => {
         path: 'images',
       },
     };
-    launchCamera(options, response => {
+    ImagePicker.showImagePicker(options, response => {
 
       console.log('Response = ', response);
       if (response.didCancel) {
